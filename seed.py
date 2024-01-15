@@ -28,7 +28,7 @@ db.session.commit()
 
 # Add feedback
 feed1 = Feedback(title="Springboard", content="SoftWare Engineering", username="dof")
-feed2 = Feedback(title="Springboard", content="Cybersecurty", username="dof")
+feed2 = Feedback(title="Springboard", content="Cybersecurity", username="dof")
 feed3 = Feedback(title="Springboard", content="SoftWare Engineering", username="david")
 
 # Add new feedback objects to session

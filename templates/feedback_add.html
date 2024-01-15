@@ -3,14 +3,14 @@
 {% block heading %} Add Feedback {% endblock %}
 {% block content %}
 
-<form action="" method="POST">
+<form method="POST">
     {{ form.hidden_tag() }}
 
     <div class="mb-3">
         {% for ele in form if ele.widget.input_type != 'hidden' %}
-        <div class="mb-3">
+        <div class="mb-2">
             {{ ele.label }}
-            {{ ele }}
+            {{ ele(class_="form-control") }}
         </div>
         {% endfor %}
     </div>

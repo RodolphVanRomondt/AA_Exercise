@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block title %} Secret {% endblock %}
-{% block heading %} Welcome To Your Page{% endblock %}
+{% block heading %} Profile Page{% endblock %}
 {% block content %}
 
 
@@ -14,6 +14,7 @@
 </div>
 
 <div>
+    <h3 class="display-3 text-center">Feedback</h3>
     {% for feedback in user.feedback %}
     <div class="card my-4">
         <div class="card-body">
@@ -24,15 +25,18 @@
                 {{ feedback.content }}
             </p>
         </div>
-        <a href="/feedback/{{ feedback.id }}/update" class="btn btn-primary btn-sm">Edit</a>
-        <a href="/feedback/{{ feedback.id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+        <div class="d-flex justify-content-center">
+            <a href="/feedback/{{ feedback.id }}/update" class="btn btn-primary btn-sm">Edit</a>
+            <a href="/feedback/{{ feedback.id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+        </div>
+        
     </div>
     {% endfor %}
 </div>
 
-<div>
-    <a href="/users/{{ user.username }}/feedback/add" class="btn btn-outline-primary btn-sm">Give a Feedback</a>
-    <a href="/users/{{ user.username }}/delete" class="btn btn-danger btn-sm">Delete Account</a>
+<div class="d-flex justify-content-between">
+    <a href="/users/{{ user.username }}/feedback/add" class="kote btn btn-outline-primary btn-sm">Give a Feedback</a>
+    <a href="/users/{{ user.username }}/delete" class="kote btn btn-outline-danger btn-sm">Delete Account</a>
 </div>
 
 {% endblock %}
