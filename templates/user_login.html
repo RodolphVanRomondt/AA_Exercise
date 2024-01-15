@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block title %} Login User {% endblock %}
+{% block heading %} Login User{% endblock %}
+{% block content %}
+
+<div class="container ">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <form method="POST">
+                {{ form.hidden_tag() }}
+
+                {% for ele in form if ele.widget.input_type != 'hidden' %}
+                <div class="mb-3">
+                    {{ ele.label }}
+                    {{ ele }}
+
+                    {% for error in form.errors %}
+                    <span class="form-text text-danger">{{ error }}</span>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+                <button class="btn btn-primary btn-sm">Login</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

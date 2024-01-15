@@ -1,0 +1,18 @@
+.nav-item {
+    padding: 0 5px 0 5px;
+}
+
+form {
+    margin: 25px;
+    width: 200px;
+}
+
+.alert {
+    /* width: 250px; */
+    text-align: center;
+}
+
+.card .btn-sm {
+    display: inline-block;
+    /* width: 100px; */
+}

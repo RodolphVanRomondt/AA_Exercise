@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %} Secret {% endblock %}
+{% block heading %} Welcome To Your Page{% endblock %}
+{% block content %}
+
+
+<div>
+
+    <p>Username: {{ user.username }}</p>
+    <p>Firstname: {{ user.first_name }}</p>
+    <p>Lastname: {{ user.last_name }}</p>
+    <p>Email: {{ user.email }}</p>
+
+</div>
+
+<div>
+    {% for feedback in user.feedback %}
+    <div class="card my-4">
+        <div class="card-body">
+            <h5 class="card-title text-info">
+                {{ feedback.title }}
+            </h5>
+            <p class="card-text">
+                {{ feedback.content }}
+            </p>
+        </div>
+        <a href="/feedback/{{ feedback.id }}/update" class="btn btn-primary btn-sm">Edit</a>
+        <a href="/feedback/{{ feedback.id }}/delete" class="btn btn-danger btn-sm">Delete</a>
+    </div>
+    {% endfor %}
+</div>
+
+<div>
+    <a href="/users/{{ user.username }}/feedback/add" class="btn btn-outline-primary btn-sm">Give a Feedback</a>
+    <a href="/users/{{ user.username }}/delete" class="btn btn-danger btn-sm">Delete Account</a>
+</div>
+
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block title %} Add Feedback {% endblock %}
+{% block heading %} Add Feedback {% endblock %}
+{% block content %}
+
+<form action="" method="POST">
+    {{ form.hidden_tag() }}
+
+    <div class="mb-3">
+        {% for ele in form if ele.widget.input_type != 'hidden' %}
+        <div class="mb-3">
+            {{ ele.label }}
+            {{ ele }}
+        </div>
+        {% endfor %}
+    </div>
+    <button class="btn btn-primary btn-sm">Add</button>
+    <a href="/users/{{ user }}"><button type="button"
+        class="btn btn-outline-primary btn-sm">Cancel</button></a>
+</form>
+
+{% endblock %}
